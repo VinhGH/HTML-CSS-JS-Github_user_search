@@ -1,0 +1,194 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+/* ===== ROOT VARIABLES ===== */
+:root {
+  --bg-color: #f6f8fa;
+  --text-color: #24292f;
+  --card-bg: #ffffff;
+  --border-color: #d0d7de;
+  --accent-color: #1c50a7;
+  --accent-hover: #1d4ed8;
+  --icon-color: #8b949e;
+  --muted-text: #6b7280;
+}
+
+body.dark {
+  --bg-color: #0d1117;
+  --text-color: #e6edf3;
+  --card-bg: #161b22;
+  --border-color: #30363d;
+  --accent-color: #1f6feb;
+  --accent-hover: #388bfd;
+  --icon-color: #8b949e;
+  --muted-text: #9da7b3;
+}
+
+/* ===== BODY ===== */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* ===== HEADER ===== */
+.header {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 16px;
+}
+
+/* Logo */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-box {
+  width: 32px;
+  height: 32px;
+  background: var(--accent-color);
+  color: #fff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* ===== DARK MODE BUTTON ===== */
+.theme-switch {
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--border-color);
+  background: transparent;
+  border-radius: 20%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color);
+  transition: background 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.theme-switch:hover {
+  background: var(--accent-color);
+  color: #fff;
+}
+
+/* Ẩn/hiện icon tuỳ theme */
+.icon-dark {
+  display: none;
+}
+body.dark .icon-dark {
+  display: block;
+}
+body.dark .icon-light {
+  display: none;
+}
+
+/* ===== MAIN ===== */
+.main {
+  width: 100%;
+  max-width: 900px;
+  padding: 40px 16px;
+}
+
+/* ===== SEARCH ===== */
+.search-form {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.input-group {
+  display: flex;
+  gap: 10px;
+}
+
+.input-wrapper {
+  flex: 1;
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--icon-color);
+}
+
+input[type="text"] {
+  width: 100%;
+  height: 45px;
+  padding: 0 12px 0 36px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 15px;
+  background: var(--card-bg);
+  color: var(--text-color);
+  transition: all 0.3s;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+.search-btn {
+  background-color: var(--accent-color);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 0 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-btn:hover {
+  background-color: var(--accent-hover);
+}
+
+/* ===== CARD ===== */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 60px 20px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.empty-icon {
+  color: var(--icon-color);
+  opacity: 0.7;
+  margin-bottom: 10px;
+}
+
+.empty-text {
+  color: var(--muted-text);
+  font-size: 15px;
+}
